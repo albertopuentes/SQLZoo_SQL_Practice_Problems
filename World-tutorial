@@ -1,0 +1,68 @@
+# Question 1
+Select name, continent, population
+From world
+
+# Question 2
+SELECT name
+FROM world
+WHERE population > 200000000
+
+# Question 3
+select name, GDP/population
+from world
+where population > 200000000
+
+# Question 4
+select name, population/1000000
+from world
+where continent = 'south america'
+
+# Question 5
+select name, population
+from world
+where name in ('france', 'germany', 'italy')
+
+# Question 6
+select name
+from world
+where name like '%United%'
+
+# Question 7
+select name, population, area
+from world
+where area > 3000000 or population > 250000000
+
+# Question 8
+select name, population, area
+from world
+where (area > 3000000 or population > 250000000) and not (area > 3000000 and population > 250000000)
+
+# Question 9
+select name, round(population/1000000, 2), round(gdp/1000000000, 2)
+from world
+where continent = 'south america'
+
+# Question 10
+select name, round(gdp/population, -3)
+from world
+where gdp > 1000000000000
+
+# Question 11
+select name, capital
+from world
+where len(name) = len(capital)
+
+# Question 12
+select name, capital
+from world
+where left(name, 1) = left(capital, 1) and name <> capital
+
+# Question 13
+select name
+from world
+where name like '%a%'and
+name like '%e%' and
+name like '%i%' and 
+name like '%o%' and
+name like '%u%' and 
+name not like '% %'
