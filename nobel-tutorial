@@ -1,0 +1,87 @@
+# Question 1 
+
+SELECT yr, subject, winner
+  FROM nobel
+ WHERE yr = 1950
+
+ # Question 2
+
+ SELECT winner
+  FROM nobel
+ WHERE yr = 1962
+   AND subject = 'literature'
+
+# Question 3 
+
+select yr, subject
+from nobel
+where winner = 'Albert Einstein'
+
+# Question 4
+
+select winner
+from nobel
+where subject = 'peace' and yr >= 2000
+
+# Question 5
+
+Select yr, subject, winner
+from nobel
+where subject = 'literature' and yr between 1980 and 1989
+
+# Question 6
+
+SELECT * FROM nobel
+ WHERE winner in ('Theodore roosevelt', 'woodrow wilson', 'jimmy carter', 'barack obama')
+
+ # Question 7
+
+select winner
+from nobel
+where winner like 'John%'
+
+# Question 8
+
+select yr, subject, winner
+from nobel
+where (subject = 'physics' and yr = 1980)
+or (subject = 'chemistry' and yr = 1984)
+
+# Question 9
+
+select yr, subject, winner
+from nobel
+where yr = 1980 and subject not in ('chemistry', 'medicine')
+
+# Question 10
+
+select yr, subject, winner
+from nobel
+where (subject = 'medicine' and yr < 1910) 
+or (subject = 'literature' and yr >= 2004)
+
+# Question 11
+
+select *
+from nobel
+where winner like 'peter gr%nberg'
+
+# Question 12
+
+select *
+from nobel
+where winner = 'eugene o''neill'
+
+# Question 13
+
+select winner, yr, subject
+from nobel
+where winner like 'sir%'
+order by yr desc, winner
+
+
+
+
+
+
+
