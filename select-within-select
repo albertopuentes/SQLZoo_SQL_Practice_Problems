@@ -1,0 +1,26 @@
+# Question 1
+SELECT name FROM world
+  WHERE population >
+     (SELECT population FROM world
+      WHERE name='Russia')
+
+# Question 2
+select name from world
+where continent = 'europe'
+and gdp/population > (select gdp/population from world where name = 'united kingdom')
+
+# Question 3
+
+select name, continent
+from world 
+where continent in (select continent from world where name in ('argentina', 'australia'))
+
+# Question 4
+
+select name, population
+from world
+where population > (select population from world where name = 'canada')
+and population < (select population from world where name = 'poland')
+
+# Question 5
+
