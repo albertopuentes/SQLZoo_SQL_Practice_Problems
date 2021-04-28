@@ -49,3 +49,6 @@ SELECT player, teamid, coach, gtime
 # game JOIN eteam ON (team1=eteam.id) or game JOIN eteam ON (team2=eteam.id)
 # Notice that because id is a column name in both game and eteam you must specify eteam.id instead of just id
 # List the dates of the matches and the name of the team in which 'Fernando Santos' was the team1 coach.
+
+select mdate, teamname from game join eteam on (team1=eteam.id)
+where coach = 'Fernando Santos'
