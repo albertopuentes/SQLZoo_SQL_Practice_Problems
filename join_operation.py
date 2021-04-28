@@ -58,3 +58,21 @@ where coach = 'Fernando Santos'
 
 select player from goal join game on (matchid=game.id) join eteam on (eteam.id=team1)
 where stadium = 'National Stadium, Warsaw'
+
+# 8.
+# The example query shows all goals scored in the Germany-Greece quarterfinal.
+# Instead show the name of all players who scored a goal against Germany.
+
+SELECT distinct player
+  FROM game JOIN goal ON matchid = id 
+    WHERE (team2='GER' or team1='GER') and teamid!='Ger'
+
+# 9.
+# Show teamname and the total number of goals scored.
+# COUNT and GROUP BY
+# You should COUNT(*) in the SELECT line and GROUP BY teamname
+
+SELECT teamname, count(*)
+FROM eteam JOIN goal ON id=teamid
+group by teamname
+ORDER BY teamname
