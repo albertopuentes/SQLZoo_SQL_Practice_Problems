@@ -76,3 +76,17 @@ SELECT teamname, count(*)
 FROM eteam JOIN goal ON id=teamid
 group by teamname
 ORDER BY teamname
+
+10.
+# Show the stadium and the number of goals scored in each stadium.
+
+select stadium, count(*) from game join goal on (id=matchid)
+group by stadium
+
+11.
+# For every match involving 'POL', show the matchid, date and the number of goals scored.
+
+SELECT matchid, mdate, count(*)
+  FROM game JOIN goal ON matchid = id 
+ WHERE (team1 = 'POL' OR team2 = 'POL')
+group by matchid, mdate
