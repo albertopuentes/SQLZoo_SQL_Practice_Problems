@@ -109,3 +109,10 @@ group by matchid, mdate
 ...
 # Notice in the query given every goal is listed. If it was a team1 goal then a 1 appears in score1, otherwise there is a 0. You could SUM this column to get a count of the goals scored by team1. Sort your result by mdate, matchid, team1 and team2.
 
+SELECT mdate, team1, 
+  sum (CASE WHEN teamid=team1 THEN 1 ELSE 0 END) as score1,
+  team2,
+  sum (CASE WHEN teamid=team2 THEN 1 ELSE 0 END) as score2
+  FROM game JOIN goal ON matchid = id
+  group by mdate, matchid, team1, team2
+  order by mdate, matchid, team1, team2
