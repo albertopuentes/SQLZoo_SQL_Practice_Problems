@@ -18,3 +18,9 @@ select id, title, yr
 from movie
 where title like '%Star Trek%'
 order by yr
+
+4. 4.
+# What id number does the actor 'Glenn Close' have?
+select actor.id
+from movie join actor on (movie.id=actor.id)
+where name = 'Glenn Close'
