@@ -31,3 +31,15 @@ where name = 'Glenn Close'
 select id
 from movie
 where title='Casablanca'
+
+# 6.
+# Obtain the cast list for 'Casablanca'.
+# what is a cast list?
+# The cast list is the names of the actors who were in the movie.
+# Use movieid=11768, (or whatever value you got from the previous question)
+
+Select name 
+From actor 
+    Join casting on (actor.id=casting.actorid) 
+    Join movie on (movie.id=casting.movieid)
+Where title='Casablanca'
