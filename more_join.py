@@ -43,3 +43,21 @@ From actor
     Join casting on (actor.id=casting.actorid) 
     Join movie on (movie.id=casting.movieid)
 Where title='Casablanca'
+
+# 7.
+# Obtain the cast list for the film 'Alien'
+
+SELECT name 
+FROM actor 
+  Join casting on (actor.id=casting.actorid) 
+  Join movie on (movie.id=casting.movieid)
+WHERE title = 'Alien'
+
+# 8.
+# List the films in which 'Harrison Ford' has appeared
+
+SELECT title 
+FROM movie
+  Join casting on (movie.id=casting.movieid) 
+  Join actor on (actor.id=casting.actorid)
+WHERE name = 'Harrison Ford'
