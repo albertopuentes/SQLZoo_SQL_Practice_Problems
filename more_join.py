@@ -79,3 +79,19 @@ FROM movie
   Join casting on (movie.id=casting.movieid) 
   Join actor on (actor.id=casting.actorid)
 WHERE yr = 1962 AND ord = 1
+
+# 11.
+# Which were the busiest years for 'Rock Hudson', show the year and the number of movies he made each year for any year in which he made more than 2 movies.
+
+SELECT yr,COUNT(title) FROM
+  movie JOIN casting ON movie.id=movieid
+        JOIN actor   ON actorid=actor.id
+WHERE name='Rock Hudson'
+GROUP BY yr
+HAVING COUNT(title) > 1
+
+# 12.
+# List the film title and the leading actor for all of the films 'Julie Andrews' played in.
+
+# Did you get "Little Miss Marker twice"?
+
