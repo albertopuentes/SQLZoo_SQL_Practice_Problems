@@ -95,3 +95,9 @@ HAVING COUNT(title) > 1
 
 # Did you get "Little Miss Marker twice"?
 
+SELECT title, name FROM casting 
+JOIN actor on (casting.actorid=actor.id)
+JOIN movie on (casting.movieid=movie.id)
+WHERE actorid IN (
+  SELECT id FROM actor
+  WHERE name='Julie Andrews')
